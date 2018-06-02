@@ -10,6 +10,10 @@ pipeline {
                     echo 'Now Archiving...'
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
+                
+                failure {
+                    echo ' Build failed....'
+                }
             }
         }
         stage ('Deploy to Staging'){
